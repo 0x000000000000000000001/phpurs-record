@@ -1,0 +1,6 @@
+package:
+  name: "record"
+  dependencies:
+    - functions
+    - prelude
+    - unsafe-coerce
