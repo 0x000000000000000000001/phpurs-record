@@ -1,4 +1,4 @@
-# purescript-record
+# phpurs-record
 
 [![Latest release](http://img.shields.io/github/release/purescript/purescript-record.svg)](https://github.com/purescript/purescript-record/releases)
 [![Build status](https://github.com/purescript/purescript-record/workflows/CI/badge.svg?branch=master)](https://github.com/purescript/purescript-record/actions?query=workflow%3ACI+branch%3Amaster)
