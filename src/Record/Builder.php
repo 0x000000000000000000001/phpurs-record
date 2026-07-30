@@ -9,9 +9,7 @@ $_copyRecord = function($rec) {
     return $rec;
 };
 
-$_unsafeInsert = function($l) {
-    return function($a) use ($l) {
-        return function($rec) use ($l, $a) {
+$_unsafeInsert = function($l, $a, $rec) {
             if (\is_array($rec)) {
                 $rec[$l] = $a;
             } else {
@@ -19,12 +17,8 @@ $_unsafeInsert = function($l) {
             }
             return $rec;
         };
-    };
-};
 
-$_unsafeModify = function($l) {
-    return function($f) use ($l) {
-        return function($rec) use ($l, $f) {
+$_unsafeModify = function($l, $f, $rec) {
             if (\is_array($rec)) {
                 $rec[$l] = $f($rec[$l]);
             } else {
@@ -32,11 +26,8 @@ $_unsafeModify = function($l) {
             }
             return $rec;
         };
-    };
-};
 
-$_unsafeDelete = function($l) {
-    return function($rec) use ($l) {
+$_unsafeDelete = function($l, $rec) {
         if (\is_array($rec)) {
             unset($rec[$l]);
         } else {
@@ -44,11 +35,8 @@ $_unsafeDelete = function($l) {
         }
         return $rec;
     };
-};
 
-$_unsafeRename = function($l1) {
-    return function($l2) use ($l1) {
-        return function($rec) use ($l1, $l2) {
+$_unsafeRename = function($l1, $l2, $rec) {
             if (\is_array($rec)) {
                 $rec[$l2] = $rec[$l1];
                 unset($rec[$l1]);
@@ -58,8 +46,6 @@ $_unsafeRename = function($l1) {
             }
             return $rec;
         };
-    };
-};
 
 $exports['copyRecord'] = $_copyRecord;
 $exports['unsafeInsert'] = $_unsafeInsert;
