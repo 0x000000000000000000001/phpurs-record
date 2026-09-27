@@ -23,7 +23,7 @@ $_unsafeUnionFn = function($r1, $r2) {
         }
     }
     
-    return $copy;
+    return (object)$copy;
 };
 
 $exports['unsafeUnionFn'] = $_unsafeUnionFn;

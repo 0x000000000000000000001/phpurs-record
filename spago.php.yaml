@@ -97,8 +97,6 @@ workspace:
       path: "../phpurs-prelude"
     random:
       path: "../phpurs-random"
-    record:
-      path: "../phpurs-record"
     refs:
       path: "../phpurs-refs"
     run:
