@@ -1,8 +1,8 @@
 <?php
 
-$_unsafeUnionFn = function($r1, $r2) {
+$_unsafeUnionFn = function ($r1, $r2) {
     $copy = [];
-    
+
     if (\is_object($r2)) {
         foreach (get_object_vars($r2) as $k => $v) {
             $copy[$k] = $v;
@@ -22,8 +22,8 @@ $_unsafeUnionFn = function($r1, $r2) {
             $copy[$k] = $v;
         }
     }
-    
-    return (object)$copy;
+
+    return (object) $copy;
 };
 
 $exports['unsafeUnionFn'] = $_unsafeUnionFn;

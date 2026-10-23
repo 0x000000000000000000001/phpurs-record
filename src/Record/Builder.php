@@ -1,6 +1,6 @@
 <?php
 
-$_copyRecord = function($rec) {
+$_copyRecord = function ($rec) {
     if (\is_object($rec)) {
         return clone $rec;
     } elseif (\is_array($rec)) {
@@ -9,7 +9,7 @@ $_copyRecord = function($rec) {
     return $rec;
 };
 
-$_unsafeInsert = function($l, $a, $rec) {
+$_unsafeInsert = function ($l, $a, $rec) {
     if (\is_array($rec)) {
         $rec[$l] = $a;
     } else {
@@ -18,7 +18,7 @@ $_unsafeInsert = function($l, $a, $rec) {
     return $rec;
 };
 
-$_unsafeModify = function($l, $f, $rec) {
+$_unsafeModify = function ($l, $f, $rec) {
     if (\is_array($rec)) {
         $rec[$l] = $f($rec[$l]);
     } else {
@@ -27,7 +27,7 @@ $_unsafeModify = function($l, $f, $rec) {
     return $rec;
 };
 
-$_unsafeDelete = function($l, $rec) {
+$_unsafeDelete = function ($l, $rec) {
     if (\is_array($rec)) {
         unset($rec[$l]);
     } else {
@@ -36,7 +36,7 @@ $_unsafeDelete = function($l, $rec) {
     return $rec;
 };
 
-$_unsafeRename = function($l1, $l2, $rec) {
+$_unsafeRename = function ($l1, $l2, $rec) {
     if (\is_array($rec)) {
         $rec[$l2] = $rec[$l1];
         unset($rec[$l1]);
